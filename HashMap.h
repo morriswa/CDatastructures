@@ -1,12 +1,11 @@
-#ifndef WMA_C_HASH_MAP
-#define WMA_C_HASH_MAP
+#ifndef WMA_C_HASH_MAP__
+#define WMA_C_HASH_MAP__
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#define TRUE 1
-#define FALSE 0
+#include "Utils.h"
 
 /**
  * default memory allocation for rows (measured in object size)
@@ -61,7 +60,7 @@ struct HashRow {
 /**
  * store entirety of Hash Map
 */
-struct HashMap {
+struct HashSet {
     /**
      * number of buckets (rows) the table will have
     */
@@ -88,18 +87,9 @@ int put(void *hash_map, char* key, char* value);
 */
 char* retrieve(void *hash_map, char* key);
 
-
 /**
  * returns true if a key exists in the map, false otherwise
 */
 int contains(void *hash_map, char* key);
-
-/**
- * hashes a char* as an unsigned long
- * 
- * SOURCE:
- *  https://stackoverflow.com/questions/7666509/hash-function-for-string
-*/
-unsigned long hash(char *str);
 
 #endif

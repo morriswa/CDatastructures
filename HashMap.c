@@ -2,7 +2,7 @@
 
 void* init_hash_map(int rows) {
     // allocate memory for new hash map
-    struct HashMap* new_map = (struct HashMap*) malloc(sizeof(struct HashMap));
+    struct HashSet* new_map = (struct HashSet*) malloc(sizeof(struct HashSet));
     // initialize with given number of rows
     new_map->bucket_quantity = rows;
     // and allocate memory for every row
@@ -22,7 +22,7 @@ void* init_hash_map(int rows) {
 
 int put(void *hash_map, char* key, char* value) {
 
-    struct HashMap* hash_map_ptr = (struct HashMap*) hash_map;
+    struct HashSet* hash_map_ptr = (struct HashSet*) hash_map;
 
     // return FALSE if the key to be added already exists in list, should use replace
     if (contains(hash_map, key)) return FALSE;
@@ -71,7 +71,7 @@ int put(void *hash_map, char* key, char* value) {
 
 char* retrieve(void *hash_map, char* key) {
     
-    struct HashMap* hash_map_ptr = (struct HashMap*) hash_map;
+    struct HashSet* hash_map_ptr = (struct HashSet*) hash_map;
 
     // hash the key
     unsigned long hash_to_check = hash(key);
@@ -90,14 +90,4 @@ char* retrieve(void *hash_map, char* key) {
 
 int contains(void* hash_map, char* key) {
     return !(NULL == retrieve(hash_map, key));
-}
-
-unsigned long hash(char *str) {
-    unsigned long hash = 5381;
-    int c;
-
-    while ((c = *str++))
-        hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
-
-    return hash;
 }

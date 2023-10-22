@@ -2,7 +2,6 @@
 
 #include "HashMap.h"
 
-
 int main(int argc, char** argv) {
 
     void* hashmap = init_hash_map(100);
