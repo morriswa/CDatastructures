@@ -1,5 +1,5 @@
-#ifndef HASH_MAP
-#define HASH_MAP
+#ifndef WMA_C_HASH_MAP
+#define WMA_C_HASH_MAP
 
 #include <stdio.h>
 #include <stdlib.h>

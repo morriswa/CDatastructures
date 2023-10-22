@@ -1,5 +1,5 @@
-#ifndef UTILS
-#define UTILS
+#ifndef WMA_C_UTILS
+#define WMA_C_UTILS
 
 /**
  * returns the length of provided string
