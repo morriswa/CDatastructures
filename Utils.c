@@ -25,3 +25,7 @@ int str_length(char* str) {
     // returning the character count of the string
     return count; 
 }
+
+int strings_are_equal(char* str1, char* str2) {
+    return 0 == strcmp(str1, str2);
+}

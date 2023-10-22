@@ -56,11 +56,14 @@ int put(void *hash_map, char* key, char* value) {
     // allocate memory for value
     char* final_value = (char*) malloc(sizeof(char) * size);
 
+    strcpy(final_value, value);
+
     // create object structure
     struct HashedObject obj = { hash_to_add, final_value, object_length };
 
     // save to correct place in row
-    row->row[row->row_length] = obj;
+    // row->row[row->row_length] = obj;
+    memcpy(&(row->row[row->row_length]), &obj, sizeof(struct HashedObject));
 
     // increment the row length
     row->row_length++;

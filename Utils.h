@@ -1,6 +1,8 @@
 #ifndef WMA_C_UTILS__
 #define WMA_C_UTILS__
 
+#include <string.h>
+
 #define TRUE 1
 #define FALSE 0
 
@@ -20,5 +22,7 @@ unsigned long hash(char *str);
  *  https://www.scaler.com/topics/string-length-in-c/
 */
 int str_length(char* str);
+
+int strings_are_equal(char* str1, char* str2);
 
 #endif
